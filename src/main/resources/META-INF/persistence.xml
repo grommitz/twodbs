@@ -10,6 +10,7 @@
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<jta-data-source>java:global/mysql/db1</jta-data-source>
 		<class>com.grommitz.twodbs.Author</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<!--<property name="javax.persistence.jdbc.user" value="root"/>-->
 			<!--<property name="javax.persistence.jdbc.password" value="chubchub"/>-->
@@ -22,7 +23,7 @@
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<jta-data-source>java:global/mysql/db2</jta-data-source>
 		<class>com.grommitz.twodbs.Book</class>
-		<!--<exclude-unlisted-classes>false</exclude-unlisted-classes>-->
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<!--<property name="javax.persistence.jdbc.user" value="root"/>-->
 			<!--<property name="javax.persistence.jdbc.password" value="chubchub"/>-->

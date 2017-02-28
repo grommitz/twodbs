@@ -3,6 +3,7 @@ package com.grommitz.twodbs;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 /**
@@ -27,6 +28,11 @@ public class Db1Dao {
 
 	public List<Author> getAllAuthors() {
 		return em.createQuery("SELECT au FROM Author au").getResultList();
+	}
+
+	public Author getAuthorById(long authorId) {
+		TypedQuery<Author> query = em.createQuery("SELECT au FROM Author au WHERE au.id = :id", Author.class);
+		return query.setParameter("id", authorId).getSingleResult();
 	}
 
 }
