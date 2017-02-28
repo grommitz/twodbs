@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence 
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+		http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
+
+	<persistence-unit name="PU1" transaction-type="JTA">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<jta-data-source>java:global/mysql/db1</jta-data-source>
+		<class>com.grommitz.twodbs.Author</class>
+		<properties>
+			<!--<property name="javax.persistence.jdbc.user" value="root"/>-->
+			<!--<property name="javax.persistence.jdbc.password" value="chubchub"/>-->
+			<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+			<property name="eclipselink.logging.level" value="FINE"/>
+		</properties>
+	</persistence-unit>
+
+	<persistence-unit name="PU2" transaction-type="JTA">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<jta-data-source>java:global/mysql/db2</jta-data-source>
+		<class>com.grommitz.twodbs.Book</class>
+		<!--<exclude-unlisted-classes>false</exclude-unlisted-classes>-->
+		<properties>
+			<!--<property name="javax.persistence.jdbc.user" value="root"/>-->
+			<!--<property name="javax.persistence.jdbc.password" value="chubchub"/>-->
+			<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+			<property name="eclipselink.logging.level" value="FINE"/>
+		</properties>
+	</persistence-unit>
+
+	<!--<persistence-unit name="PU1" transaction-type="JTA">-->
+		<!--<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
+		<!--<jta-data-source>java:global/mysql/db1</jta-data-source>-->
+		<!--<properties>-->
+			<!--<property name="hibernate.classloading.use_current_tccl_as_parent" value="false" />-->
+			<!--<property name="hibernate.connection.connectionCollation" value="utf8mb4_unicode_ci" />-->
+			<!--<property name="hibernate.connection.isolation" value="2" />-->
+			<!--<property name="hibernate.connection.useUnicode" value="true" />-->
+			<!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />-->
+			<!--<property name="hibernate.hbm2ddl.auto" value="update" />-->
+			<!--<property name="hibernate.show_sql" value="false" />-->
+			<!--<property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.SunOneJtaPlatform" />-->
+		<!--</properties>-->
+	<!--</persistence-unit>-->
+
+	<!--<persistence-unit name="PU2" transaction-type="JTA">-->
+		<!--<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
+		<!--<jta-data-source>java:global/mysql/db2</jta-data-source>-->
+		<!--<properties>-->
+			<!--<property name="hibernate.classloading.use_current_tccl_as_parent" value="false" />-->
+			<!--<property name="hibernate.connection.connectionCollation" value="utf8mb4_unicode_ci" />-->
+			<!--<property name="hibernate.connection.isolation" value="2" />-->
+			<!--<property name="hibernate.connection.useUnicode" value="true" />-->
+			<!--<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />-->
+			<!--<property name="hibernate.hbm2ddl.auto" value="update" />-->
+			<!--<property name="hibernate.show_sql" value="false" />-->
+			<!--<property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.SunOneJtaPlatform" />-->
+		<!--</properties>-->
+	<!--</persistence-unit>-->
+
+	<persistence-unit name="PU1TEST" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<properties>
+			<property name="hibernate.connection.driver_class"        value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.connectionCollation" value="utf8mb4_unicode_ci" />
+			<property name="hibernate.connection.useUnicode"          value="true" />
+			<property name="hibernate.connection.url"                 value="jdbc:mysql://localhost/UserServiceTestDb" />
+			<property name="hibernate.connection.username"            value="root" />
+			<property name="hibernate.connection.password"            value="chubchub" />
+			<property name="hibernate.dialect"                        value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+			<property name="hibernate.show_sql"                       value="false" />
+			<property name="hibernate.format_sql"                     value="false" />
+			<property name="hibernate.current_session_context_class"  value="thread" />
+			<property name="hibernate.hbm2ddl.auto"                   value="" />
+		</properties>
+	</persistence-unit>
+
+</persistence>
