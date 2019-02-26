@@ -32,7 +32,7 @@
         <port-number>3306</port-number>
         <database-name>twodbs1</database-name>
         <user>root</user>
-        <password>chubchub</password>
+        <password>*****</password>
         <property>
             <name>fish.payara.sql-trace-listeners</name>
             <value>com.sun.gjc.util.SQLTraceLogger</value>
